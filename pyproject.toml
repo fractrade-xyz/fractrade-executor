@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "fractrade-executor"
+version = "0.1.0"
+description = "Executor for Fractrade trading signals and actions"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "fractrade_executor", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0"
+fractrade-hl-simple = "*"
+websockets = "*"
+python-dotenv = "*"
+pydantic = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-asyncio = "*"
+black = "*"
+isort = "*"
+flake8 = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+fractrade-executor = "fractrade_executor.cli:main" 
